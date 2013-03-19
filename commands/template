@@ -1,0 +1,29 @@
+package commands
+
+import (
+	"flag"
+	"github.com/jgrocho/pass/options"
+)
+
+func init() {
+	cmd := new(<name>)
+	// Define flags here
+	Register("<name>", cmd)
+}
+
+type <name> struct {
+	flags flag.FlagSet
+}
+
+func (cmd *<name>) Usage() {
+	// Print usage message for <name> here.
+}
+
+func (cmd *<name>) Flags() flag.FlagSet {
+	return cmd.flags
+}
+
+func (cmd *<name>) Run(globals options.Options, args []string) error {
+	// Define command here.
+	return nil
+}
